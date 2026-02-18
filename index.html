@@ -126,6 +126,33 @@ body{
   .app{grid-template-columns:1fr}
   .sidebar{display:none}
 }
+
+/* WhatsApp Floating Button */
+.whatsapp-btn{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  width:54px;
+  height:54px;
+  background:#000;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:20px;
+  text-decoration:none;
+  z-index:1000;
+  transition:0.3s;
+}
+
+.whatsapp-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 12px 30px rgba(0,0,0,0.35);
+}
+
+  
 </style>
 </head>
 
@@ -213,5 +240,15 @@ body{
   </div>
 </div>
 
+<a 
+  href="https://wa.me/573173562747"
+  class="whatsapp-btn"
+  target="_blank"
+  aria-label="Contactar por WhatsApp"
+>
+  W
+</a>
+
+  
 </body>
 </html>
