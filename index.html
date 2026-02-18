@@ -2,51 +2,270 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Domka Solutions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 20px 8%;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-    .container {
-      text-align: center;
+
+    header h1 {
+      font-size: 20px;
+      font-weight: 700;
     }
-    a {
-      display: block;
-      margin: 12px 0;
-      padding: 14px;
-      background: #2563eb;
-      color: white;
+
+    nav a {
+      margin-left: 20px;
       text-decoration: none;
-      border-radius: 8px;
+      color: #374151;
+      font-weight: 500;
     }
-    a:hover {
-      background: #1d4ed8;
+
+    nav a:hover {
+      color: #111827;
+    }
+
+    .hero {
+      padding: 100px 8% 80px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+      background: white;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #6b7280;
+      max-width: 600px;
+    }
+
+    .hero-boxes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .box {
+      background: #f3f4f6;
+      border-radius: 12px;
+      height: 140px;
+    }
+
+    .section {
+      padding: 80px 8%;
+    }
+
+    .section h3 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 30px;
+      border: 1px solid #e5e7eb;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    }
+
+    .card h4 {
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: #6b7280;
+      margin-bottom: 20px;
+    }
+
+    .card a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      padding: 60px 8%;
+      margin-top: 60px;
+    }
+
+    footer h5 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      padding: 16px 18px;
+      border-radius: 50%;
+      font-size: 22px;
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 36px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Domka Solutions</h1>
-    <p>Soluciones digitales inteligentes</p>
 
-    <a href="https://meeting-virid-five.vercel.app/" target="_blank">
-      Asistente de Reuniones
-    </a>
+<header>
+  <h1>Domka Solutions</h1>
+  <nav>
+    <a href="#servicios">Servicios</a>
+    <a href="https://meeting-virid-five.vercel.app/" target="_blank">Asistente</a>
+    <a href="https://academia-nine-gules.vercel.app/" target="_blank">Academia</a>
+    <a href="https://domka-sw.github.io/domka-cotizador/home" target="_blank">Cotizador</a>
+  </nav>
+</header>
 
-    <a href="https://academia-nine-gules.vercel.app/" target="_blank">
-      Academia
-    </a>
-
-    <a href="https://domka-sw.github.io/domka-cotizador/home" target="_blank">
-      Cotizador
-    </a>
+<section class="hero">
+  <div>
+    <h2>Soluciones digitales para equipos modernos</h2>
+    <p>
+      En Domka Solutions desarrollamos herramientas que conectan productividad,
+      automatización y conocimiento. Cada servicio vive en su propia plataforma,
+      accesible desde un solo ecosistema.
+    </p>
   </div>
+
+  <div class="hero-boxes">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</section>
+
+<section class="section" id="servicios">
+  <h3>Nuestros servicios</h3>
+
+  <div class="cards">
+    <div class="card">
+      <h4>Asistente de Reuniones</h4>
+      <p>
+        Transcripción, actas, tareas y resúmenes automáticos para reuniones
+        empresariales.
+      </p>
+      <a href="https://meeting-virid-five.vercel.app/" target="_blank">
+        Explorar →
+      </a>
+    </div>
+
+    <div class="card">
+      <h4>Academia Digital</h4>
+      <p>
+        Formación práctica en automatización, inteligencia artificial
+        y herramientas digitales.
+      </p>
+      <a href="https://academia-nine-gules.vercel.app/" target="_blank">
+        Explorar →
+      </a>
+    </div>
+
+    <div class="card">
+      <h4>Cotizador Inteligente</h4>
+      <p>
+        Genera cotizaciones claras, rápidas y profesionales para tus clientes.
+      </p>
+      <a href="https://domka-sw.github.io/domka-cotizador/home" target="_blank">
+        Explorar →
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h5>Domka Solutions</h5>
+      <p>Soluciones digitales inteligentes</p>
+    </div>
+
+    <div>
+      <h5>Plataformas</h5>
+      <p>Asistente de Reuniones</p>
+      <p>Academia Digital</p>
+      <p>Cotizador</p>
+    </div>
+
+    <div>
+      <h5>Contacto</h5>
+      <p>WhatsApp: +57 317 356 2747</p>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/573173562747" target="_blank">
+  💬
+</a>
+
 </body>
 </html>
