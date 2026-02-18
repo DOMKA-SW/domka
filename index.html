@@ -3,200 +3,261 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Domka Solutions | Ecosistema Digital</title>
+<title>Domka Solutions</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#6b7280;
+  --card:#f9fafb;
+  --border:#e5e7eb;
+}
+
+[data-theme="dark"]{
+  --bg:#0b0f19;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --card:#111827;
+  --border:#1f2937;
+}
+
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:#f5f5f5;color:#111;}
-section{padding:100px 8%;}
-h1,h2{font-weight:700;}
-p{color:#555;line-height:1.7;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  transition:0.3s;
+}
+
+section{padding:120px 8%;}
+
+header{
+  position:sticky;
+  top:0;
+  background:var(--bg);
+  border-bottom:1px solid var(--border);
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:10;
+}
+
+header h1{font-size:20px;}
+
+.toggle{
+  cursor:pointer;
+  padding:8px 14px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  background:var(--card);
+  font-size:14px;
+}
 
 .hero{
-background:#fff;
-padding:120px 8%;
-display:grid;
-grid-template-columns:1.2fr 1fr;
-gap:60px;
-align-items:center;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:80px;
+  align-items:center;
 }
 
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
+.hero h2{
+  font-size:52px;
+  line-height:1.15;
+  margin-bottom:24px;
 }
 
-.dashboard-preview{
-background:#fff;
-border-radius:20px;
-padding:30px;
-box-shadow:0 20px 40px rgba(0,0,0,0.05);
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
+.hero p{
+  font-size:20px;
+  color:var(--muted);
+}
+
+.dashboard{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
 }
 
 .card{
-background:#fafafa;
-border-radius:14px;
-padding:25px;
-border:1px solid #eee;
-transition:0.4s ease;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:30px;
+  transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-6px);
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transform:translateY(-6px);
 }
 
 .metric{
-font-size:28px;
-font-weight:700;
-margin-bottom:6px;
+  font-size:32px;
+  font-weight:700;
 }
 
 .service{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-background:#fff;
-border-radius:20px;
-padding:60px;
-margin-bottom:80px;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+  margin-bottom:140px;
 }
 
 .service img{
-width:100%;
-border-radius:16px;
-filter:grayscale(100%);
+  width:100%;
+  border-radius:24px;
+  filter:grayscale(100%);
 }
 
-.service h2{
-margin-bottom:20px;
-font-size:32px;
+.service h3{
+  font-size:36px;
+  margin-bottom:20px;
 }
 
-.footer{
-background:#111;
-color:#ccc;
-padding:60px 8%;
-text-align:center;
+.service p{
+  font-size:18px;
+  color:var(--muted);
+}
+
+.arch{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:80px;
+  text-align:center;
+}
+
+footer{
+  padding:80px 8%;
+  border-top:1px solid var(--border);
+  text-align:center;
+  color:var(--muted);
 }
 
 .whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#000;
-color:#fff;
-padding:18px;
-border-radius:50%;
-text-decoration:none;
-font-size:18px;
-box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  background:var(--text);
+  color:var(--bg);
+  padding:16px;
+  border-radius:50%;
+  text-decoration:none;
 }
 
 @media(max-width:900px){
-.hero,.service{grid-template-columns:1fr;}
-.hero h1{font-size:34px;}
+  .hero,.service{grid-template-columns:1fr;}
+  .hero h2{font-size:36px;}
 }
 </style>
 </head>
 
 <body>
 
+<header>
+  <h1>Domka</h1>
+  <button class="toggle" onclick="toggleTheme()">Modo claro / oscuro</button>
+</header>
+
 <section class="hero">
-<div>
-<h1>Domka Ecosystem</h1>
-<p>
-Domka Solutions integra herramientas digitales que funcionan como un sistema conectado.
-Cada plataforma cumple una función específica dentro del ecosistema:
-organización, formación y estructuración comercial.
-</p>
-</div>
+  <div>
+    <h2>Ecosistema digital<br>modular e inteligente</h2>
+    <p>
+      Domka Solutions es una plataforma tecnológica que agrupa
+      herramientas digitales especializadas. Cada solución funciona
+      de forma independiente, pero todas comparten una arquitectura común.
+    </p>
+  </div>
 
-<div class="dashboard-preview">
-<div class="card">
-<div class="metric">3</div>
-<p>Plataformas activas</p>
-</div>
-<div class="card">
-<div class="metric">Integradas</div>
-<p>Ecosistema conectado</p>
-</div>
-<div class="card">
-<div class="metric">Automatización</div>
-<p>Procesos optimizados</p>
-</div>
-<div class="card">
-<div class="metric">Escalable</div>
-<p>Infraestructura modular</p>
-</div>
-</div>
+  <div class="dashboard">
+    <div class="card">
+      <div class="metric">3</div>
+      <p>Soluciones activas</p>
+    </div>
+    <div class="card">
+      <div class="metric">Modular</div>
+      <p>Arquitectura escalable</p>
+    </div>
+    <div class="card">
+      <div class="metric">Automatización</div>
+      <p>Procesos estructurados</p>
+    </div>
+    <div class="card">
+      <div class="metric">Ecosistema</div>
+      <p>Plataformas conectadas</p>
+    </div>
+  </div>
 </section>
 
 <section>
 
 <div class="service">
-<img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80" alt="">
-<div>
-<h2>Asistente de Reuniones</h2>
-<p>
-Plataforma enfocada en la estructuración automática de reuniones.
-Permite registrar información, organizar tareas y generar documentación
-de manera sistemática dentro de equipos de trabajo.
-</p>
-</div>
-</div>
-
-<div class="service">
-<div>
-<h2>Academia Digital</h2>
-<p>
-Entorno de formación diseñado para el aprendizaje continuo en
-automatización, herramientas digitales y metodologías tecnológicas.
-Funciona como la base educativa del ecosistema.
-</p>
-</div>
-<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" alt="">
+  <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1400&q=80">
+  <div>
+    <h3>Asistente de Reuniones</h3>
+    <p>
+      Plataforma orientada a la organización estructural de reuniones,
+      documentación automática y seguimiento de información clave
+      dentro de equipos de trabajo.
+    </p>
+  </div>
 </div>
 
 <div class="service">
-<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="">
-<div>
-<h2>Cotizador Inteligente</h2>
-<p>
-Sistema estructurado para la generación organizada de propuestas
-comerciales y cotizaciones. Permite mantener coherencia,
-orden y profesionalismo en procesos de venta.
-</p>
+  <div>
+    <h3>Academia Digital</h3>
+    <p>
+      Espacio de formación continua enfocado en automatización,
+      inteligencia artificial y herramientas digitales.
+      Funciona como base de conocimiento del ecosistema Domka.
+    </p>
+  </div>
+  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80">
 </div>
+
+<div class="service">
+  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80">
+  <div>
+    <h3>Cotizador Inteligente</h3>
+    <p>
+      Sistema diseñado para estructurar propuestas comerciales,
+      cotizaciones y procesos económicos de forma clara,
+      coherente y profesional.
+    </p>
+  </div>
 </div>
 
 </section>
 
 <section>
-<div style="background:#fff;border-radius:20px;padding:60px;box-shadow:0 10px 30px rgba(0,0,0,0.05);text-align:center;">
-<h2 style="margin-bottom:20px;">Arquitectura Modular</h2>
-<p>
-Domka no funciona como una herramienta única,
-sino como un conjunto de módulos independientes
-que interactúan entre sí. Cada solución puede operar
-de forma autónoma o integrarse dentro del ecosistema completo.
-</p>
-</div>
+  <div class="arch">
+    <h3 style="margin-bottom:20px;">Arquitectura del Ecosistema</h3>
+    <p>
+      Domka no es una herramienta única, sino un conjunto de soluciones
+      conectadas por principios comunes de diseño, automatización
+      y escalabilidad.
+    </p>
+  </div>
 </section>
 
-<div class="footer">
-<p>Domka Solutions — Ecosistema Digital</p>
-<p>Contacto WhatsApp: +57 317 356 2747</p>
-</div>
+<footer>
+  <p>Domka Solutions — Plataforma Digital</p>
+  <p>Contacto WhatsApp: +57 317 356 2747</p>
+</footer>
 
 <a class="whatsapp" href="https://wa.me/573173562747" target="_blank">WA</a>
+
+<script>
+function toggleTheme(){
+  const current = document.body.getAttribute("data-theme");
+  document.body.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+  localStorage.setItem("theme", document.body.getAttribute("data-theme"));
+}
+const saved = localStorage.getItem("theme");
+if(saved) document.body.setAttribute("data-theme", saved);
+</script>
 
 </body>
 </html>
