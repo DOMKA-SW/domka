@@ -1,271 +1,202 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Domka Solutions</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Domka Solutions | Ecosistema Digital</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#f5f5f5;color:#111;}
+section{padding:100px 8%;}
+h1,h2{font-weight:700;}
+p{color:#555;line-height:1.7;}
 
-    body {
-      background: #f9fafb;
-      color: #111827;
-      line-height: 1.6;
-    }
+.hero{
+background:#fff;
+padding:120px 8%;
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:60px;
+align-items:center;
+}
 
-    header {
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
 
-    header h1 {
-      font-size: 20px;
-      font-weight: 700;
-    }
+.dashboard-preview{
+background:#fff;
+border-radius:20px;
+padding:30px;
+box-shadow:0 20px 40px rgba(0,0,0,0.05);
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
 
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #374151;
-      font-weight: 500;
-    }
+.card{
+background:#fafafa;
+border-radius:14px;
+padding:25px;
+border:1px solid #eee;
+transition:0.4s ease;
+}
 
-    nav a:hover {
-      color: #111827;
-    }
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
 
-    .hero {
-      padding: 100px 8% 80px;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 40px;
-      align-items: center;
-      background: white;
-    }
+.metric{
+font-size:28px;
+font-weight:700;
+margin-bottom:6px;
+}
 
-    .hero h2 {
-      font-size: 48px;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
+.service{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+background:#fff;
+border-radius:20px;
+padding:60px;
+margin-bottom:80px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
 
-    .hero p {
-      font-size: 18px;
-      color: #6b7280;
-      max-width: 600px;
-    }
+.service img{
+width:100%;
+border-radius:16px;
+filter:grayscale(100%);
+}
 
-    .hero-boxes {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
+.service h2{
+margin-bottom:20px;
+font-size:32px;
+}
 
-    .box {
-      background: #f3f4f6;
-      border-radius: 12px;
-      height: 140px;
-    }
+.footer{
+background:#111;
+color:#ccc;
+padding:60px 8%;
+text-align:center;
+}
 
-    .section {
-      padding: 80px 8%;
-    }
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#000;
+color:#fff;
+padding:18px;
+border-radius:50%;
+text-decoration:none;
+font-size:18px;
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
 
-    .section h3 {
-      font-size: 32px;
-      margin-bottom: 40px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 14px;
-      padding: 30px;
-      border: 1px solid #e5e7eb;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-    }
-
-    .card h4 {
-      margin-bottom: 12px;
-      font-size: 20px;
-    }
-
-    .card p {
-      color: #6b7280;
-      margin-bottom: 20px;
-    }
-
-    .card a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #111827;
-    }
-
-    footer {
-      background: #111827;
-      color: #d1d5db;
-      padding: 60px 8%;
-      margin-top: 60px;
-    }
-
-    footer h5 {
-      color: white;
-      margin-bottom: 10px;
-    }
-
-    footer p {
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-    }
-
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      padding: 16px 18px;
-      border-radius: 50%;
-      font-size: 22px;
-      text-decoration: none;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h2 {
-        font-size: 36px;
-      }
-    }
-  </style>
+@media(max-width:900px){
+.hero,.service{grid-template-columns:1fr;}
+.hero h1{font-size:34px;}
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>Domka Solutions</h1>
-  <nav>
-    <a href="#servicios">Servicios</a>
-    <a href="https://meeting-virid-five.vercel.app/" target="_blank">Asistente</a>
-    <a href="https://academia-nine-gules.vercel.app/" target="_blank">Academia</a>
-    <a href="https://domka-sw.github.io/domka-cotizador/home" target="_blank">Cotizador</a>
-  </nav>
-</header>
-
 <section class="hero">
-  <div>
-    <h2>Soluciones digitales para equipos modernos</h2>
-    <p>
-      En Domka Solutions desarrollamos herramientas que conectan productividad,
-      automatización y conocimiento. Cada servicio vive en su propia plataforma,
-      accesible desde un solo ecosistema.
-    </p>
-  </div>
+<div>
+<h1>Domka Ecosystem</h1>
+<p>
+Domka Solutions integra herramientas digitales que funcionan como un sistema conectado.
+Cada plataforma cumple una función específica dentro del ecosistema:
+organización, formación y estructuración comercial.
+</p>
+</div>
 
-  <div class="hero-boxes">
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-  </div>
+<div class="dashboard-preview">
+<div class="card">
+<div class="metric">3</div>
+<p>Plataformas activas</p>
+</div>
+<div class="card">
+<div class="metric">Integradas</div>
+<p>Ecosistema conectado</p>
+</div>
+<div class="card">
+<div class="metric">Automatización</div>
+<p>Procesos optimizados</p>
+</div>
+<div class="card">
+<div class="metric">Escalable</div>
+<p>Infraestructura modular</p>
+</div>
+</div>
 </section>
 
-<section class="section" id="servicios">
-  <h3>Nuestros servicios</h3>
+<section>
 
-  <div class="cards">
-    <div class="card">
-      <h4>Asistente de Reuniones</h4>
-      <p>
-        Transcripción, actas, tareas y resúmenes automáticos para reuniones
-        empresariales.
-      </p>
-      <a href="https://meeting-virid-five.vercel.app/" target="_blank">
-        Explorar →
-      </a>
-    </div>
+<div class="service">
+<img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80" alt="">
+<div>
+<h2>Asistente de Reuniones</h2>
+<p>
+Plataforma enfocada en la estructuración automática de reuniones.
+Permite registrar información, organizar tareas y generar documentación
+de manera sistemática dentro de equipos de trabajo.
+</p>
+</div>
+</div>
 
-    <div class="card">
-      <h4>Academia Digital</h4>
-      <p>
-        Formación práctica en automatización, inteligencia artificial
-        y herramientas digitales.
-      </p>
-      <a href="https://academia-nine-gules.vercel.app/" target="_blank">
-        Explorar →
-      </a>
-    </div>
+<div class="service">
+<div>
+<h2>Academia Digital</h2>
+<p>
+Entorno de formación diseñado para el aprendizaje continuo en
+automatización, herramientas digitales y metodologías tecnológicas.
+Funciona como la base educativa del ecosistema.
+</p>
+</div>
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" alt="">
+</div>
 
-    <div class="card">
-      <h4>Cotizador Inteligente</h4>
-      <p>
-        Genera cotizaciones claras, rápidas y profesionales para tus clientes.
-      </p>
-      <a href="https://domka-sw.github.io/domka-cotizador/home" target="_blank">
-        Explorar →
-      </a>
-    </div>
-  </div>
+<div class="service">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="">
+<div>
+<h2>Cotizador Inteligente</h2>
+<p>
+Sistema estructurado para la generación organizada de propuestas
+comerciales y cotizaciones. Permite mantener coherencia,
+orden y profesionalismo en procesos de venta.
+</p>
+</div>
+</div>
+
 </section>
 
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h5>Domka Solutions</h5>
-      <p>Soluciones digitales inteligentes</p>
-    </div>
+<section>
+<div style="background:#fff;border-radius:20px;padding:60px;box-shadow:0 10px 30px rgba(0,0,0,0.05);text-align:center;">
+<h2 style="margin-bottom:20px;">Arquitectura Modular</h2>
+<p>
+Domka no funciona como una herramienta única,
+sino como un conjunto de módulos independientes
+que interactúan entre sí. Cada solución puede operar
+de forma autónoma o integrarse dentro del ecosistema completo.
+</p>
+</div>
+</section>
 
-    <div>
-      <h5>Plataformas</h5>
-      <p>Asistente de Reuniones</p>
-      <p>Academia Digital</p>
-      <p>Cotizador</p>
-    </div>
+<div class="footer">
+<p>Domka Solutions — Ecosistema Digital</p>
+<p>Contacto WhatsApp: +57 317 356 2747</p>
+</div>
 
-    <div>
-      <h5>Contacto</h5>
-      <p>WhatsApp: +57 317 356 2747</p>
-    </div>
-  </div>
-</footer>
-
-<a class="whatsapp" href="https://wa.me/573173562747" target="_blank">
-  💬
-</a>
+<a class="whatsapp" href="https://wa.me/573173562747" target="_blank">WA</a>
 
 </body>
 </html>
